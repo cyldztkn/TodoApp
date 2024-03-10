@@ -1,0 +1,54 @@
+:root {
+
+
+  --pure-black: #0A0A0A;
+  --pure-white: #D6D6D6;
+  --pure-white-40: rgba(214, 214, 214, 0.40);
+  --pure-white-20: rgba(214, 214, 214, 0.20)
+  --pure-white-10: rgba(214, 214, 214, 0.10);
+  --orange: #E0621B;
+  --orange-54: rgba(224, 98, 27, 0.54);
+  --orange-72: rgba(224, 98, 27, 0.72);
+  --container-bg: #1F1F1F;
+  --alert: #E01B1B;
+  --pending: #1B99E0;
+  --sucsess: #1BE052;
+  --alert-80: rgba(224, 27, 27, 0.80);
+  --secondary-80: rgba(255, 209, 102, 0.8);
+
+
+
+}
+
+
+
+
+
+/* tablet  */
+
+@media only screen and (min-width: 640px) {
+
+  div {
+    background-color: red;
+  }
+
+
+}
+
+
+/* desktop */
+
+@media only screen and (min-width: 1024px) {
+
+  div {
+    background-color: purple;
+  }
+
+
+  section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+}
