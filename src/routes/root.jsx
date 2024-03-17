@@ -1,29 +1,28 @@
-import foldersData from "../../getData/folderFetch";
-import FolderCard from "../molecules/folderCard.jsx";
+import DashboardCard from "../components/molecules/dashboardCard";
+import foldersData from "../getData/folderFetch";
 let folders = [];
 
-const AsideLeft = () => {
+function Dashboard() {
   for (let i = 0; i < foldersData.length; i++) {
     folders.push(foldersData[i].fields);
   }
+  console.log(folders);
 
   return (
-    <aside className="aside-left" id="left">
-      {/* <FolderCard></FolderCard> */}
+    <main>
       {folders.map((item, index) => {
         return (
           <a key={index} href={`/${item.FolderNames.toLowerCase()}`}>
-            <FolderCard
+            <DashboardCard
               id={item.id}
-              key={index}
               cardName={item.FolderNames}
               icon={item.icon}
             />
           </a>
         );
       })}
-    </aside>
+    </main>
   );
-};
+}
 
-export default AsideLeft;
+export default Dashboard;
