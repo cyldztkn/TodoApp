@@ -8,6 +8,6 @@ export default defineConfig({
     target: 'esnext' //browsers can handle the latest ES features
   },
 
-  base: '/TodoApp/', // Bu kısmı projenizin GitHub Pages URL'sine göre ayarlayın
+
 
 })

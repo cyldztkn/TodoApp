@@ -2,10 +2,10 @@ import Icon from "@mdi/react";
 import PropTypes from "prop-types";
 
 import {
-  mdiCheckboxMultipleMarkedCircleOutline,
   mdiCalendarBlankMultiple,
   mdiAttachment,
   mdiAccountGroup,
+  mdiCheckboxMultipleMarkedCircleOutline,
   mdiCheckboxMarkedCircleOutline,
   mdiCheckCircle,
   // mdiDeleteEmptyOutline,
@@ -69,7 +69,6 @@ let NoteCard = (props) => {
 
 export default NoteCard;
 
-
 NoteCard.propTypes = {
   id: PropTypes.string,
   status: PropTypes.string,
@@ -78,4 +77,3 @@ NoteCard.propTypes = {
   attachment: PropTypes.array,
   folder: PropTypes.string,
 };
-

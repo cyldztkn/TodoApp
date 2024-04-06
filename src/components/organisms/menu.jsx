@@ -16,7 +16,7 @@ const Menu = () => {
         {" "}
         <a href="http://localhost:5173/"><Icon path={mdiCollage} size={1.5} className="selected" /></a>
         <Icon path={mdiMagnify} size={1.5} />
-        <Icon path={mdiPlusCircle} size={1.5} />
+       <a href="/add"> <Icon path={mdiPlusCircle} size={1.5} /></a>
         <Icon path={mdiBellOutline} size={1.5} />
         <Icon path={mdiAccount} size={1.5} />
       </nav>

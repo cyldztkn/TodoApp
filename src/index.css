@@ -132,6 +132,9 @@ aside {
   right: 0;
   transform: translateX(100%);
   transition: transform 600ms cubic-bezier(0, 0.2, 0.6, 1.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
@@ -209,6 +212,100 @@ header.right-opened .left-button {
 .aside-left article:hover {
   border-left: 8px solid var(--orange);
 
+}
+
+.aside-right .months-control-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px
+}
+
+.calendar-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.aside-right .calendar {
+  width: 80%;
+  height: 40%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 12px 40px 40px 40px;
+}
+
+.day {
+  text-align: center;
+  /* border: 1px solid red; */
+  margin-bottom: 12px;
+}
+
+.day p {
+  border-bottom: 1px solid var(--pure-white-40);
+  padding-bottom: 12px;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  /* border: 1px solid red; */
+  border-radius: 999px;
+  position: relative;
+}
+
+.cell p {
+  user-select: none;
+  cursor: default;
+}
+
+.cell a {
+  border-radius: 999px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 4px);
+  padding: 4px;
+
+}
+
+.cell a.to-do {
+  background-color: var(--alert);
+
+}
+
+.cell a.done {
+  background-color: var(--sucsess);
+
+}
+
+.cell a.in-process {
+  background-color: var(--pending);
+
+}
+
+
+
+/* .cell p::after {
+  content: '';
+  background-color: var(--alert);
+  border-radius: 999px;
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 4px);
+  padding: 4px;
+
+} */
+
+.today {
+  background-color: var(--pure-white-40);
 }
 
 main {
@@ -374,6 +471,8 @@ textarea::selection {
   justify-content: start;
   border-bottom: 1px solid var(--pure-white-40);
   gap: 20px;
+  font-size: 0.76925rem;
+
 
 }
 
@@ -426,14 +525,70 @@ option {
 
 input[type='date']::-webkit-inner-spin-button,
 input[type='date']::-webkit-calendar-picker-indicator {
-  /* display: none; */
+  display: none;
   color: var(--pure-white);
   -webkit-appearance: none;
 }
 
-input[type='submit'] {
+input[type='file'] {
+  display: none;
+
+}
+
+form label.buttons {
+  display: flex;
+  ;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  min-height: 52px;
+  cursor: pointer;
+  flex: 1 1 auto;
+
+}
+
+button.fill-button {
   background-color: var(--orange);
-  color: white;
+  color: var(--pure-white);
+  outline: none;
+  border: none;
+
+}
+
+.fill-button:hover {
+  background-color: var(--orange-72);
+}
+
+.fill-button:active {
+  background-color: var(--orange-54);
+}
+
+.outline-button {
+  background-color: var(--container-bg);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
+
+.outline-button:hover {
+  border: 1px solid var(--orange-72);
+  color: var(--orange-72);
+}
+
+.outline-button:active {
+  border: 1px solid var(--orange-54);
+  color: var(--orange-54);
+
 }
 
 

@@ -27,7 +27,6 @@ const router = createBrowserRouter([
     path: "/add",
     element: <Add />,
   },
-
 ]);
 
 const MainSection = (props) => {
@@ -62,6 +61,24 @@ const MainSection = (props) => {
     headerEl.classList.toggle("right-opened");
     rightButtonRotate();
   };
+  let path = window.location.pathname;
+  let currectFolderName = path.split("/").slice(-1)[0];
+  let pageTitle;
+  if (path == "/") {
+    pageTitle = "dashboard";
+  } else if (
+    currectFolderName == "family" ||
+    currectFolderName == "works" ||
+    currectFolderName == "ideas" ||
+    currectFolderName == "study" ||
+    currectFolderName == "shoplist"
+  ) {
+    pageTitle = currectFolderName;
+  } else if (currectFolderName == "add") {
+    pageTitle = "Add";
+  } else {
+    pageTitle = "Note";
+  }
 
   return (
     <section className="middle">
@@ -73,7 +90,7 @@ const MainSection = (props) => {
           onClick={leftButtonHandler}
           className="left-button"
         />
-        <h4>{props.pageTitle}</h4>{" "}
+        <h4>{pageTitle}</h4>{" "}
         <Icon
           path={mdiInboxArrowUp}
           size={1}
@@ -92,7 +109,6 @@ const MainSection = (props) => {
 export default MainSection;
 
 MainSection.propTypes = {
-  pageTitle: PropTypes.string,
   controlLeft: PropTypes.func,
   controlRight: PropTypes.func,
 };

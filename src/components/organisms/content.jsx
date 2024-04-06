@@ -13,11 +13,15 @@ const Content = () => {
     rightAside.classList.toggle("open");
   };
 
+ 
+
+  // console.log(currectFolderName)
+
   return (
     <section className="main-content">
       <AsideLeft />
       <MainSection
-        pageTitle="dashboard"
+
         controlLeft={controlAsideLeft}
         controlRight={controlAsideRight}
       />
