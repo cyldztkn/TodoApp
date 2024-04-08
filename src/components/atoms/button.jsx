@@ -6,7 +6,7 @@ import {
   mdiTextBoxCheckOutline,
   mdiLoading,
   mdiClose,
-  // mdiAccountGroup,
+  mdiPlusCircle,
   // mdiTextBoxEditOutline,
 } from "@mdi/js";
 
@@ -48,6 +48,13 @@ function Button(props) {
       <button type="reset" className="outline-button">
         <Icon path={mdiClose} size={1} />
         <p className="s">Vazgeç</p>
+      </button>
+    );
+  } else if (props.type == "nav") {
+    return (
+      <button className="fill-button">
+        <Icon path={mdiPlusCircle} size={1} />
+        <p className="s">{props.inner}</p>
       </button>
     );
   }

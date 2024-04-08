@@ -146,7 +146,8 @@ aside {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 12px;
 
 }
 
@@ -180,6 +181,7 @@ header.left-opened .left-button {
 
 header.left-opened :nth-child(n+2) {
   display: none;
+  /* sorun burada */
 }
 
 .right-opened {
@@ -311,9 +313,11 @@ header.right-opened .left-button {
 main {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  justify-content: center;
+  gap: 12px;
+  justify-content: flex-start;
   overflow-y: auto;
+  min-height: 80dvh;
+  border-radius: 8px;
 }
 
 main article {
@@ -400,7 +404,7 @@ section.note-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  /* padding: 16px 8px; */
+  padding: 4px 8px;
 }
 
 .sliding-card {
@@ -429,6 +433,7 @@ section.note-card {
 .single-note-container {
   background-color: var(--container-bg);
   border-radius: 4px;
+  height: 96%;
 }
 
 .single-note-container form {
@@ -436,12 +441,14 @@ section.note-card {
   flex-direction: column;
   padding: 16px 8px;
   gap: 40px;
+  height: 100%;
 }
 
 .form-area {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  height: 100%;
 }
 
 textarea {
@@ -458,6 +465,7 @@ textarea {
   color: var(--pure-white);
   font-size: 0.76925rem;
   font-family: "Open Sans", sans-serif;
+  height: 80%;
 }
 
 textarea::selection {
@@ -474,6 +482,16 @@ textarea::selection {
   font-size: 0.76925rem;
 
 
+}
+
+.form-area {
+  a {
+    margin-left: auto;
+    color: var(--orange-72);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
 select {
@@ -605,4 +623,256 @@ button.fill-button {
 
 /* desktop */
 
-@media only screen and (min-width: 1024px) {}
+@media only screen and (min-width: 1024px) {
+  #root {
+    flex-direction: column-reverse;
+    padding: 20px;
+    gap: 12px;
+
+  }
+
+
+
+  .main-content {
+    padding: 0px;
+  }
+
+  nav {
+    border-radius: 8px;
+    gap: 20px;
+    min-height: 72px;
+
+
+    * {
+      flex: 1 1 auto;
+    }
+
+    a {
+      button {
+        margin-left: auto;
+        margin-right: auto;
+        height: 52px;
+
+        svg {
+          color: var(--pure-white);
+        }
+      }
+
+      svg {
+        color: var(--orange);
+      }
+    }
+
+
+
+
+
+    form {
+      flex: 15 1 auto;
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      svg {
+        position: absolute;
+        color: var(--orange);
+        left: 4%;
+      }
+
+      input {
+        width: 100%;
+        min-height: 52px;
+        border-radius: 4px;
+        border: none;
+        background-color: var(--pure-white-40);
+        padding-left: 12%;
+        color: var(--pure-white);
+        font-size: 1rem;
+
+      }
+
+      input:focus {
+        border: none;
+        outline: none;
+      }
+
+      input::placeholder {
+        color: var(--pure-white);
+        font-size: 1rem;
+
+      }
+    }
+
+
+  }
+
+  header {
+    min-height: 60px;
+  }
+
+
+  aside {
+    position: unset;
+    /* flex: 1 0 0; */
+    width: 76px;
+    height: 100%;
+  }
+
+  .open {
+    transform: unset;
+    max-width: unset;
+  }
+
+  .aside-left {
+    transform: unset;
+    transition: width 600ms cubic-bezier(0, 0.2, 0.6, 1.2);
+
+    a {
+      article {
+        h4 {
+          opacity: 0;
+          visibility: invisible;
+        }
+
+        svg {
+          min-width: 24px;
+        }
+      }
+    }
+  }
+
+  aside.open {
+    width: 33%;
+
+    a {
+      article {
+        h4 {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 600ms cubic-bezier(0, 0.2, 0.6, 1.2), visibility 600ms cubic-bezier(0, 0.2, 0.6, 1.2);
+        }
+      }
+    }
+
+    .calendar {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .months-control-container {
+      opacity: 1;
+      visibility: visible;
+
+    }
+
+    .calendar-icon {
+      display: none;
+    }
+  }
+
+  .aside-right {
+    transform: unset;
+    transition: width 600ms cubic-bezier(0, 0.2, 0.6, 1.2);
+
+    .calendar, .months-control-container {
+      opacity: 0;
+      visibility: invisible;
+      transition: opacity 600ms cubic-bezier(0, 0.2, 0.6, 1.2), visibility 600ms cubic-bezier(0, 0.2, 0.6, 1.2);
+    }
+
+    .calendar-icon {
+      color: var(--orange);
+      margin-top: 20px;
+    }
+  }
+
+
+  header.left-opened :nth-child(n+2) {
+    display: unset;
+    /* sorun burada */
+  }
+
+  header.right-opened :nth-child(2) {
+    display: unset;
+  }
+
+  header.right-opened .right-button, header.left-opened .left-button {
+    margin-right: unset;
+    margin-left: unset;
+  }
+
+  header.right-opened .left-button {
+    display: unset;
+  }
+
+  .right-opened {
+    flex-direction: row;
+  }
+
+  .middle {
+    /* flex: 2 0 0; */
+    gap: 12px;
+  }
+
+  main {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: auto;
+
+
+
+
+    a {
+      width: calc(50% - 6px);
+    }
+
+    article {
+      height: 126px;
+    }
+
+    section.note-card {
+      height: 126px;
+      padding: 0px;
+
+      .card-content {
+        justify-content: space-between;
+        padding: 16px 20px;
+        height: 80%;
+
+      }
+    }
+
+  }
+
+  .single-note-container {
+    width: 100%;
+    margin: 0px auto;
+    padding: 12px 32px;
+    height: 100%;
+
+
+
+  }
+
+  .form-area {
+    a {
+      margin-left: auto;
+      color: var(--orange-72);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  textarea {
+    min-height: 24dvh;
+    min-width: 98%;
+
+
+
+  }
+
+
+}

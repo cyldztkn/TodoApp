@@ -22,7 +22,10 @@ function createNewRecord(formValues) {
     name: fileArr[1].name,
     type: fileArr[1].type,
   };
-  let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/${folder[1].toLowerCase()}/`;
+  let fileUrl = "https://www.dijitaleskiz.com.tr/wp-content/uploads/2024/04/dummy-file.webp";
+
+  
+  let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/tblIrzIrYeWcRHOl0/`;
 
   fetch(url, {
     method: "POST",
@@ -38,10 +41,11 @@ function createNewRecord(formValues) {
         Status: status[1],
         Attachments: [
           {
-            url: "https://www.dijitaleskiz.com.tr/wp-content/uploads/2024/04/dummy-file.webp",
+            url: `${file.name ? fileUrl : null}`,
             filename: file.name,
           },
         ],
+        FolderName: folder[1],
       },
     }),
   }).then((res) => console.log(res));
@@ -173,6 +177,7 @@ function Add() {
             <label htmlFor="date-input">
               <Icon path={mdiCalendarBlankMultiple} size={0.8} />
               <input
+              defaultValue={new Date().toISOString().slice(0, 10)}
                 type="date"
                 name="date"
                 id="date-input"

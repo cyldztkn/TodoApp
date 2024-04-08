@@ -6,9 +6,10 @@ const AsideLeft = () => {
   for (let i = 0; i < foldersData.length; i++) {
     folders.push(foldersData[i].fields);
   }
+  let userScreenWidth = window.innerWidth;
 
   return (
-    <aside className="aside-left" id="left">
+    <aside className={`aside-left  ${userScreenWidth>1024 && "open"}`} id="left">
       {/* <FolderCard></FolderCard> */}
       {folders.map((item, index) => {
         return (

@@ -2,7 +2,7 @@ import Icon from "@mdi/react";
 import {
   mdiCalendarBlankMultiple,
   mdiAttachment,
-  // mdiAccountGroup,
+  mdiFileEyeOutline,
   mdiCheckboxMarkedCircleOutline,
   mdiCheckboxMultipleMarkedCircleOutline,
   mdiCheckCircle,
@@ -39,6 +39,7 @@ function updateNote(formValues) {
     name: fileArr[1].name,
     type: fileArr[1].type,
   };
+  let fileUrl = "https://www.dijitaleskiz.com.tr/wp-content/uploads/2024/04/dummy-file.webp";
 
   fetch(url, {
     method: "PATCH",
@@ -54,7 +55,7 @@ function updateNote(formValues) {
         Body: note[1],
         Attachments: [
           {
-            url: "https://www.dijitaleskiz.com.tr/wp-content/uploads/2024/04/dummy-file.webp",
+            url: `${file.name ? fileUrl : null}`,
             filename: file.name,
           },
         ],
@@ -103,7 +104,7 @@ let xssDedector = (formData) => {
 let formHandler = (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
-  xssDedector(formData)
+  xssDedector(formData);
 };
 
 function reset() {
@@ -125,6 +126,7 @@ function File() {
               id="note-body"
               name="note-body"
               defaultValue={noteData.fields.Body}
+              rows="auto"
             ></textarea>
 
             <label htmlFor="status">
@@ -177,13 +179,15 @@ function File() {
             </label>
 
             {noteData.fields.Attachments ? (
-              <a href={noteData.fields.Attachments[0].url} target="_blank">
-                <label htmlFor="file">
-                  <Icon path={mdiAttachment} size={0.8} />
-                  {noteData.fields.Attachments[0].filename}
-                  <input type="file" name="file" id="file" />
-                </label>
-              </a>
+              <label htmlFor="file">
+                <Icon path={mdiAttachment} size={0.8} />
+                {noteData.fields.Attachments ? "Yeni Dosya Ekle": "Dosya ekle"}
+                <a href={noteData.fields.Attachments[0].url} target="_blank">
+                  <Icon path={mdiFileEyeOutline} size={0.8} />
+                  {noteData.fields.Attachments && noteData.fields.Attachments[0].filename}
+                </a>
+                <input type="file" name="file" id="file" />
+              </label>
             ) : (
               <label htmlFor="file">
                 <Icon path={mdiAttachment} size={0.8} />

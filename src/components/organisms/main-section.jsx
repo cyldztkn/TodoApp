@@ -27,6 +27,10 @@ const router = createBrowserRouter([
     path: "/add",
     element: <Add />,
   },
+  {
+    path: "/search",
+    element: <Add />,
+  },
 ]);
 
 const MainSection = (props) => {

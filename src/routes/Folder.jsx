@@ -17,7 +17,8 @@ let currectFolderName = path.split("/").slice(-1)[0];
 
 let notesData = [];
 // let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/tbld9RNTilkhKyf0Q/`;
-let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/${currectFolderName}?sort%5B0%5D%5Bfield%5D=Created&sort%5B0%5D%5Bdirection%5D=desc`;
+// let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/${currectFolderName}?sort%5B0%5D%5Bfield%5D=Created&sort%5B0%5D%5Bdirection%5D=desc`;
+let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/tblIrzIrYeWcRHOl0?view=${currectFolderName}`;
 let fethchingFolders = async () => {
   await fetch(url, {
     method: "GET",

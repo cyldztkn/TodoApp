@@ -6,6 +6,12 @@ import {
   mdiBellOutline,
   mdiAccount,
 } from "@mdi/js";
+import Button from "../atoms/button";
+
+function searchHandler(e) {
+  e.preventDefault();
+  console.log("asd");
+}
 
 const Menu = () => {
   let userScreenWidth = window.innerWidth;
@@ -14,9 +20,14 @@ const Menu = () => {
     return (
       <nav>
         {" "}
-        <a href="http://localhost:5173/"><Icon path={mdiCollage} size={1.5} className="selected" /></a>
+        <a href="/">
+          <Icon path={mdiCollage} size={1.5} className="selected" />
+        </a>
         <Icon path={mdiMagnify} size={1.5} />
-       <a href="/add"> <Icon path={mdiPlusCircle} size={1.5} /></a>
+        <a href="/add">
+          {" "}
+          <Icon path={mdiPlusCircle} size={1.5} />
+        </a>
         <Icon path={mdiBellOutline} size={1.5} />
         <Icon path={mdiAccount} size={1.5} />
       </nav>
@@ -24,16 +35,24 @@ const Menu = () => {
   } else {
     return (
       <nav>
-        <Icon path={mdiCollage} size={1.5} />
-        <div>
-          <input type="search" name="Search" id="nav-search" />
-          <Icon path={mdiMagnify} size={1} />
-        </div>
+        <a href="/">
+          <Icon path={mdiCollage} size={1.5} />
+        </a>
 
-        <div className="button">
-          <Icon path={mdiPlusCircle} size={1.5} />
-          Create Folder
-        </div>
+        <form htmlFor="nav-search" onSubmit={searchHandler}>
+          <input
+            type="search"
+            name="Search"
+            id="nav-search"
+            placeholder="Search..."
+            disabled
+          />
+          <Icon path={mdiMagnify} size={1.5} />
+        </form>
+        <a href="/add">
+          <Button type="nav" inner="Not Ekle" />
+        </a>
+
         <Icon path={mdiBellOutline} size={1.5} />
         <Icon path={mdiAccount} size={1.5} />
       </nav>

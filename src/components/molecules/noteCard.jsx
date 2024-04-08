@@ -27,7 +27,10 @@ let NoteCard = (props) => {
       </div> */}
         <div className="card-content ">
           <div className="card-body">
-            <p className="body-content s">{props.body}</p>
+            <p className="body-content s">
+              {props.body.slice(0, 100)}
+              {props.body.length > 100 ? "..." : null}
+            </p>
             <div className="status">
               {/* <Icon path={mdiCheckboxMultipleMarkedCircleOutline} size={1} /> */}
 

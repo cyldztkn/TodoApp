@@ -123,6 +123,11 @@ const Calendar = (props) => {
                     (element) => element.time === monthNames[month] + day
                   ).link
                 }
+                aria-labelledby={
+                  `read the note with id ${props.allRecords.find(
+                    (element) => element.time === monthNames[month] + day
+                  ).link}`
+                }
                 className={
                   props.allRecords.find(
                     (element) => element.time === monthNames[month] + day
