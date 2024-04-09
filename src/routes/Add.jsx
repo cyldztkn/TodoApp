@@ -26,11 +26,13 @@ function createNewRecord(formValues) {
 
   
   let url = `https://api.airtable.com/v0/appquUwAzZkY7xoxV/tblIrzIrYeWcRHOl0/`;
+let token = import.meta.env.VITE_TOKEN_KEY;
+
 
   fetch(url, {
     method: "POST",
     headers: {
-      Authorization: `Bearer patBb87UoH7v7O4OH.e980695bd267f9bddf8566d219b5e915f7c9e7655f37fa9df464afef9234e9ae`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
 

@@ -28,8 +28,8 @@ const router = createBrowserRouter([
     element: <Add />,
   },
   {
-    path: "/search",
-    element: <Add />,
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 
