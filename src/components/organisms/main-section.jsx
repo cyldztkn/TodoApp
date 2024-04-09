@@ -11,7 +11,7 @@ import ErrorPage from "../../error.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/TodoApp/",
     element: <Dashboard />,
     errorElement: <ErrorPage />,
   },
