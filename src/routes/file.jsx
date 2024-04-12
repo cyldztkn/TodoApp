@@ -31,6 +31,7 @@ let fethchingFolders = async () => {
 
 if (path.includes("file")) {
   await fethchingFolders();
+  console.log(noteData)
 }
 
 function updateNote(formValues) {

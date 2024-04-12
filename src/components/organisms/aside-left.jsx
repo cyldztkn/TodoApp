@@ -1,5 +1,6 @@
 import foldersData from "../../getData/folderFetch";
 import FolderCard from "../molecules/folderCard.jsx";
+// import { Link } from "react-router-dom";
 let folders = [];
 
 const AsideLeft = () => {
@@ -9,11 +10,14 @@ const AsideLeft = () => {
   let userScreenWidth = window.innerWidth;
 
   return (
-    <aside className={`aside-left  ${userScreenWidth>1024 && "open"}`} id="left">
+    <aside
+      className={`aside-left  ${userScreenWidth > 1024 && "open"}`}
+      id="left"
+    >
       {/* <FolderCard></FolderCard> */}
       {folders.map((item, index) => {
         return (
-          <a key={index} href={`/${item.FolderNames.toLowerCase()}`}>
+          <a key={index} href={`/TodoApp/${item.FolderNames.toLowerCase()}`}>
             <FolderCard
               id={item.id}
               key={index}

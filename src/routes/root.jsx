@@ -15,7 +15,7 @@ function Dashboard() {
     <main>
       {folders.map((item, index) => {
         return (
-          <a key={index} href={`/${item.FolderNames.toLowerCase()}`}>
+          <a key={index} href={`/TodoApp/${item.FolderNames.toLowerCase()}`}>
             <DashboardCard
               id={item.id}
               cardName={item.FolderNames}

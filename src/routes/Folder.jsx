@@ -9,7 +9,7 @@ let currectFolderName = path.split("/").slice(-1)[0];
 
 // let airtableFolderId = "asd"
 
-// console.log(currectFolderName);
+console.log(currectFolderName);
 // console.log(path);
 // console.log(currectFolderName.includes("add"));
 // console.log(currectFolderName != "");
@@ -39,6 +39,7 @@ if (
   currectFolderName.includes("study")
 ) {
   await fethchingFolders();
+  console.log(notesData)
   // console.log('fetch atıldı')
 }
 

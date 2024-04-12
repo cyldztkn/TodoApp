@@ -11,20 +11,20 @@ import ErrorPage from "../../error.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/TodoApp/",
+    path: "/TodoApp",
     element: <Dashboard />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/:folder/",
+    path: "TodoApp/:folder/",
     element: <Folder />,
   },
   {
-    path: "/file/:id",
+    path: "TodoApp/file/:id/",
     element: <File />,
   },
   {
-    path: "/add",
+    path: "TodoApp/add",
     element: <Add />,
   },
   {

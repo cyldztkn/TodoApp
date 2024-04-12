@@ -20,11 +20,11 @@ const Menu = () => {
     return (
       <nav>
         {" "}
-        <a href="/">
+        <a href="/TodoApp/">
           <Icon path={mdiCollage} size={1.5} className="selected" />
         </a>
         <Icon path={mdiMagnify} size={1.5} />
-        <a href="/add">
+        <a href="/TodoApp/add">
           {" "}
           <Icon path={mdiPlusCircle} size={1.5} />
         </a>
@@ -35,7 +35,7 @@ const Menu = () => {
   } else {
     return (
       <nav>
-        <a href="/">
+        <a href="/TodoApp/">
           <Icon path={mdiCollage} size={1.5} />
         </a>
 
@@ -49,7 +49,7 @@ const Menu = () => {
           />
           <Icon path={mdiMagnify} size={1.5} />
         </form>
-        <a href="/add">
+        <a href="/TodoApp/add">
           <Button type="nav" inner="Not Ekle" />
         </a>
 

@@ -14,7 +14,7 @@ import {
 
 let NoteCard = (props) => {
   return (
-    <a href={`/file/${props.id}`}>
+    <a href={`/TodoApp/file/${props.id}`}>
       <section className="note-card" data-target={props.id}>
         {/* REACT'DA TOUCH EVENTS OLMADIĞINI BİLİYOR MUYDUNUZ ? BEN ARTIK BİLİYORUM */}
         {/* <div className="edit-card">

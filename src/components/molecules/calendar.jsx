@@ -118,7 +118,7 @@ const Calendar = (props) => {
             ) ? (
               <a
                 href={
-                  "/file/" +
+                  "/TodoApp/file/" +
                   props.allRecords.find(
                     (element) => element.time === monthNames[month] + day
                   ).link
